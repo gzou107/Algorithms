@@ -47,12 +47,10 @@ public class Solution {
         
       
         ListNode head2 = getMed(root);
-        
-        ListNode ne = head2.next;
         TreeNode r = new TreeNode(head2.val);
         
         r.left = helper(root, l, m-1); 
-        r.right = helper(ne, m+1, h);
+        r.right = helper(head2.next, m+1, h);
         
         return r;
         
